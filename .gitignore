@@ -1,0 +1,17 @@
+# Visual Studio相关
+.vs/
+ipch/
+*.suo
+*.vc.db
+*.vcxproj.user
+*.tlog/
+x64/
+Debug/
+Release/
+
+# 其他临时文件
+*.log
+*.ilk
+*.pdb
+*.obj
+*.res
