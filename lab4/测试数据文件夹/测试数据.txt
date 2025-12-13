@@ -1,0 +1,14 @@
+例1：
+    E->E+T 
+    T->a 
+ 
+例2：
+exp ->exp addop term | term
+addop -> + | -
+term -> term mulop factor | factor
+mulop -> * |/
+factor -> ( exp ) | n
+
+例3:
+
+A->(A)|a

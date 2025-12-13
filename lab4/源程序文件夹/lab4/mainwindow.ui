@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LR(1) 分析生成器</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabGrammar">
+       <attribute name="title">
+        <string>文法</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_grammar">
+        <item>
+         <widget class="QPlainTextEdit" name="grammarEdit"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabFirstFollow">
+       <attribute name="title">
+        <string>FIRST/FOLLOW</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_firstfollow">
+        <item>
+         <widget class="QTableWidget" name="tableFirst"/>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableFollow"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabLR0">
+       <attribute name="title">
+        <string>LR(0) DFA</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_lr0">
+        <item>
+         <widget class="QTableWidget" name="tableLR0States"/>
+        </item>
+        <item>
+        <widget class="QTableWidget" name="tableLR0Trans"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabSLR">
+       <attribute name="title">
+        <string>SLR(1) 判断</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_slr">
+        <item>
+         <widget class="QLabel" name="labelSLRResult">
+          <property name="text">
+           <string>尚未判断</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+            <widget class="QTableWidget" name="tableSLR"/>
+          </item>
+          <item>
+            <widget class="QPlainTextEdit" name="plainTextSLRConflicts"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabLR1DFA">
+       <attribute name="title">
+        <string>LR(1) DFA</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_lr1dfa">
+        <item>
+         <widget class="QTableWidget" name="tableLR1States"/>
+        </item>
+        <item>
+        <widget class="QTableWidget" name="tableLR1Trans"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabLR1Table">
+       <attribute name="title">
+        <string>LR(1) 分析表</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_lr1table">
+        <item>
+         <widget class="QTableWidget" name="tableLR1Parse"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabSentence">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="title">
+        <string>句子分析</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_sentence">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_sentence">
+          <item>
+           <widget class="QLabel" name="labelSentence">
+            <property name="text">
+             <string>输入句子：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineSentence"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableSteps"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionOpenGrammar"/>
+    <addaction name="actionSaveGrammar"/>
+   </widget>
+   <widget class="QMenu" name="menuAnalyze">
+    <property name="title">
+     <string>分析</string>
+    </property>
+    <addaction name="actionComputeFirstFollow"/>
+    <addaction name="actionBuildLR0SLR"/>
+    <addaction name="actionBuildLR1Table"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuAnalyze"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpenGrammar">
+   <property name="text">
+    <string>打开文法</string>
+   </property>
+  </action>
+  <action name="actionSaveGrammar">
+   <property name="text">
+    <string>保存文法</string>
+   </property>
+  </action>
+  <action name="actionComputeFirstFollow">
+   <property name="text">
+    <string>计算 FIRST/FOLLOW</string>
+   </property>
+  </action>
+  <action name="actionBuildLR0SLR">
+   <property name="text">
+    <string>构造 LR(0)/SLR</string>
+   </property>
+  </action>
+  <action name="actionBuildLR1Table">
+   <property name="text">
+    <string>构造 LR(1) 表</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
