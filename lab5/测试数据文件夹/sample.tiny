@@ -1,0 +1,26 @@
+read a;
+read b;
+
+# initialize sum and counter
+a := a + b;
+count := 0;
+
+# while loop with comparison and prefix increment
+while count < 5 do
+  ++count;
+  a += count;
+enddo;
+
+# repeat-until loop with power and modulo
+repeat
+  a := (a ^ 2) % 10;
+  b -= 1;
+until b = 0;
+
+# for loop with init/condition/step
+for(count := 0; count < 3; ++count) do
+  write a;
+  a := a + count;
+enddo;
+
+write a;
